@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+:root {
+  --main-color: #b0c1bb;
+  --font: #dfe6e4;
+  --pink: #d9bfc2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Roboto", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* color: #696f6d; */
+  color: #4A4A4A;
+  font-size: 0.7rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Almarai";
+}
+
+p {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2, h3, h5 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+h4, h6 {
+  font-size: 2em;
+}
+
+.title__btn {
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+  padding: 2vh 3vw;
+  margin-right: 10px;
+  color: white;
+  font: inherit;
+  outline: inherit;
+  border: 1px solid white;
+  font-weight: bold;
+}
+
+.btn__contact {
+  background-color: var(--main-color);
+}
+.btn__contact:hover {
+  background-color: transparent;
+  border: solid 1px var(--main-color);
+  color: var(--main-color);
+}
+
+.btn__other {
+  background-color: transparent;
+}
+.btn__other:hover {
+  background-color: white;
+  color: var(--main-color);
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100vw;
+}
+header nav {
+  text-align: center;
+  padding: 3vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+header nav a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  font-family: "Almarai";
+}
+header .header__banner {
+  background: url(./img/dark_runner.jpg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 160px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+header .header__banner .title {
+  width: 60%;
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.container {
+  width: 100vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  /* .background{
+    background: url(./img/8.png);
+  }
+  .background__upside{
+    background: url(./img/7.png);
+  } */
+}
+.container #descr, .container #about, .container #testimony, .container #courses, .container #questions {
+  padding: 7vh 4vw;
+}
+.container #descr {
+  background-color: var(--font);
+  height: 46vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+.container #descr .descr__dtl {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8vh;
+  justify-content: space-around;
+}
+.container #descr .descr__dtl h3 {
+  width: 40%;
+}
+.container #descr .descr__dtl p {
+  width: 40%;
+}
+.container #descr .descr__numb {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+.container .background {
+  background-color: white;
+}
+.container .background__upside {
+  background-color: #dfe6e4;
+}
+.container .background__upside, .container .background {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 10vh;
+}
+.container .background__upside img, .container .background img {
+  width: 100%;
+}
+.container #about {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.container #about .about-img {
+  /* margin: 0 auto; */
+  margin: auto;
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.container #about .about-img img {
+  /*  width: 100%;
+   height: 100%; */
+  width: auto;
+  height: 100%;
+  margin-left: -50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 50%;
+}
+.container #about .about__dtl {
+  margin-bottom: 1vh;
+}
+.container #about .about__dtl h4 {
+  padding-bottom: 1em;
+}
+.container #about .about__dtl {
+  width: 60%;
+  /* height: fit-content; */
+  border-left: 2px solid var(--pink);
+  margin: 1em;
+  padding: 3em;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+}
+.container .news {
+  height: 3vh;
+  background-color: #d9bfc2;
+  color: black;
+}
+.container #courses {
+  display: flex;
+  flex-direction: column;
+}
+.container #courses .courses {
+  text-align: center;
+  height: 80vh;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.container #courses .courses__dtl, .container #courses .courses__carousel {
+  width: 50%;
+  height: 100%;
+}
+.container #courses .courses__dtl {
+  font-family: "Roboto";
+  background-color: var(--pink);
+  padding: 2em;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container #courses .courses__dtl h5 {
+  text-align: center;
+}
+.container #courses .courses__dtl i {
+  font-weight: 400;
+  padding: 5px;
+  font-size: 2em;
+}
+.container #courses .courses .benefits {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* padding-bottom: 3%; */
+  width: 100%;
+  margin: 0 auto;
+}
+.container #courses .courses .benefits-one {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 0.2em 0;
+}
+.container #courses .courses .benefits p {
+  font-size: 1.2rem;
+}
+.container #courses .courses__carousel {
+  background-color: blue;
+  position: relative;
+}
+.container #courses .courses__carousel__nav {
+  position: absolute;
+}
+.container #courses .courses__carousel__nav__btn {
+  color: pink;
+}
+.container #courses .courses__carousel__content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.container #courses .courses__carousel__content__item {
+  height: 100%;
+  min-width: 100%;
+}
+.container #courses .courses__carousel__content__item img {
+  width: 100%;
+  height: 100%;
+}
+.container #courses button {
+  margin: 0 auto;
+}
+.container #testimony {
+  background-color: #dfe6e4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 50vh;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.container #testimony .testimonies {
+  margin: 2vh 0;
+  height: 50%;
+  width: 50%;
+  background-color: white;
+}
+.container #testimony button {
+  color: #4A4A4A;
+  border: solid 1px #4A4A4A;
+}
+.container #questions {
+  /* height: 80vh; */
+}
+.container #questions .questions {
+  margin: auto;
+}
+.container #questions .question-plus {
+  display: flex;
+  flex-direction: row;
+  padding: 3em 0;
+  width: 100%;
+  justify-content: space-between;
+}
+.container #questions .q_r {
+  position: relative;
+}
+.container #questions .q_r:after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0;
+  height: 1px;
+  width: 50%; /* or 100px */
+  border-bottom: 1px solid #4A4A4A;
+}
+.container #questions .questions__list {
+  margin: 5em;
+}
+.container #questions, .container .q_r {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 3em;
+  margin-bottom: 2em;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  height: 20vh;
+  font-size: 1em;
+  justify-content: space-around;
+  margin: 2em;
+}
+footer ul {
+  list-style-type: none;
+  padding: 2em 0;
+}
+footer li {
+  margin-bottom: 1em;
+}
+footer .home {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+footer .footer-menus {
+  width: 80%;
+}
+footer .footer-menus {
+  display: flex;
+  justify-content: space-around;
+}
+footer img {
+  width: 7em;
+}/*# sourceMappingURL=style.css.map */
