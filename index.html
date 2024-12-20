@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./script.js"></script>
   <link rel="stylesheet" href="./style/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   
@@ -72,22 +73,13 @@
       <section id="courses">
         <div class="courses">
           <!-- slider -->
-          <div class="courses__carousel">
+          <div class="courses__slider">
 
-            <div class="courses__carousel__nav">
-              <button class="courses__carousel__nav__btn courses__carousel__nav__btn--preview"><i class="fa-solid fa-caret-left"></i></button>
-              <button class="courses__carousel__nav__btn courses__carousel__nav__btn--preview"><i class="fa-solid fa-caret-right"></i></button>
-            </div>
-
-            <div class="courses__carousel__content">
-                <div class="courses__carousel__content__item">
-                  <img src="./style/img/BOXE.jpg" alt="">
-                </div>
-                <div class="courses__carousel__content__item">
-                  <img src="./style/img/hijabi.jpg" alt="">
-                </div>
-                <div class="courses__carousel__content__item">
-                  <img src="./style/img/runner.jpg" alt="">
+            <div class="courses__slider__content">
+                <div class="courses__slider__content__item">
+                  <img src="./style/img/BOXE.jpg" alt="sport" id="slide">
+                  <div id="previous" onclick="ChangeSlide(-1)">&lt;</div>
+                  <div id="next" onclick="ChangeSlide(1)">&gt;</div>
                 </div>
             </div>
 
@@ -215,5 +207,3 @@
   <p>Coach 128. All Rights Reserved 2024. Licensing AlQuwa </p>
 </body>
 </html>
-
-<script src="./script.js"></script>
