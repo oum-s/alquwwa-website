@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./script.js"></script>
+  
   <link rel="stylesheet" href="./style/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   
 
   <title>AL Quwwa</title>
@@ -77,44 +79,47 @@
 
             <div class="courses__slider__content">
                 <div class="courses__slider__content__item">
-                  <img src="./style/img/BOXE.jpg" alt="sport" id="slide">
-                  <div id="previous" onclick="ChangeSlide(-1)">&lt;</div>
-                  <div id="next" onclick="ChangeSlide(1)">&gt;</div>
+                  <img src="./style/img/boxe.jpg" alt="sport" id="slider-image">
+                  
                 </div>
             </div>
 
           </div>
 
           
-          <div class="courses__dtl">
+          <div class="courses__dtl description" id="slider-descr">
             <div class="courses__dtl__txt">
-              <h5>HIIT</h5>
+              <h5 id="slider-title">HIIT</h5>
               <h6>Qu'est ce que c'est ?</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!</p>
+              <p id="slider-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!</p>
               
             </div>
             <div class="benefits">
               <div class="benefits-one">
                 <i class="far fa-clock"></i>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.</p>
+                <p id="slider-benefit1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.</p>
               </div>
               <div class="benefits-one">
                 <i class="far fa-clock"></i>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.</p>
+                <p id="slider-benefit2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.</p>
               </div>
               <div class="benefits-one">
                 <i class="far fa-clock"></i>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.</p>
+                <p id="slider-benefit3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.</p>
               </div>
               <div class="benefits-one">
                 <i class="far fa-clock"></i>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.</p>
+                <p id="slider-benefit4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.</p>
               </div>
             </div>
             <button class="btn__contact">Contact</button>
           </div>
-
+          <div class="courses__controls">
+            <div id="prev">&lt;</div>
+            <div id="next">&gt;</div>
+          </div>
         </div>
+        
         
 
         
@@ -127,10 +132,14 @@
         <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
 
         <div class="testimonies">
-
+          <div class="testimonies-item">
+            <p id="testimony-text">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perferendis exercitationem voluptatibus? Nemo optio placeat ratione. Perferendis esse repellat tenetur accusantium reiciendis aperiam corporis illum. Aspernatur nihil a dolorum numquam!"</p><br>
+            <h6 id="testimony-author">John Doe</h6>
+             
+          </div>
         </div>
 
-        <button class="btn__other">Contactez-moi</button>
+        <button id="hey" class="btn__other">Contactez-moi</button>
         
       </section>
       <div class="background">
@@ -145,27 +154,27 @@
           <div class="q_r">
             <div class="question-plus">
               <p class="questions">HOW DO I SIGN-UP TO THE SEMI-PRIVATE PRESONAL TRAINING?</p>
-              <i>+</i>
+              <i class="fa-solid fa-circle-plus" id='toggle-response'></i>
             </div>
-            <p class="response">If you want to join our popular indoor bootcamps you can sign up directly online. You have the option of choosing 2,3,4 or unlimited sessions per week!
+            <p id="response">If you want to join our popular indoor bootcamps you can sign up directly online. You have the option of choosing 2,3,4 or unlimited sessions per week!
               Once you have secured your space you will be invited in to the studio for a 1-1 consultation. We will then discuss your goals and lifestyle filling out a health questionnaire and to see if you are a good fit. You will then be given a start date to begin your fitness journey.</p>
             
           </div>
           <div class="q_r">
             <div class="question-plus">
               <p class="questions">HOW DO I SIGN-UP TO THE SEMI-PRIVATE PRESONAL TRAINING?</p>
-              <i>+</i>
+              <i class="fa-solid fa-circle-plus" id='toggle-response'></i>
             </div>
-            <p class="response">If you want to join our popular indoor bootcamps you can sign up directly online. You have the option of choosing 2,3,4 or unlimited sessions per week!
+            <p id="response">If you want to join our popular indoor bootcamps you can sign up directly online. You have the option of choosing 2,3,4 or unlimited sessions per week!
               Once you have secured your space you will be invited in to the studio for a 1-1 consultation. We will then discuss your goals and lifestyle filling out a health questionnaire and to see if you are a good fit. You will then be given a start date to begin your fitness journey.</p>
             
           </div>
           <div class="q_r">
             <div class="question-plus">
               <p class="questions">HOW DO I SIGN-UP TO THE SEMI-PRIVATE PRESONAL TRAINING?</p>
-              <i>+</i>
+              <i class="fa-solid fa-circle-plus" id='toggle-response'></i>
             </div>
-            <p class="response">If you want to join our popular indoor bootcamps you can sign up directly online. You have the option of choosing 2,3,4 or unlimited sessions per week!
+            <p id="response">If you want to join our popular indoor bootcamps you can sign up directly online. You have the option of choosing 2,3,4 or unlimited sessions per week!
               Once you have secured your space you will be invited in to the studio for a 1-1 consultation. We will then discuss your goals and lifestyle filling out a health questionnaire and to see if you are a good fit. You will then be given a start date to begin your fitness journey.</p>
             
           </div>
@@ -205,5 +214,6 @@
     </div>
   </footer>
   <p>Coach 128. All Rights Reserved 2024. Licensing AlQuwa </p>
+  <script src="./script.js"></script>
 </body>
 </html>

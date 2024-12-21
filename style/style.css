@@ -220,6 +220,7 @@ header .header__banner .title {
 .container #courses {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .container #courses .courses {
   text-align: center;
@@ -231,13 +232,16 @@ header .header__banner .title {
   justify-content: space-between;
   margin: 0 auto;
 }
+.container #courses .courses:hover #prev, .container #courses .courses:hover #next {
+  opacity: 1;
+}
 .container #courses .courses__dtl, .container #courses .courses__slider {
   width: 50%;
   height: 100%;
 }
 .container #courses .courses__dtl {
   font-family: "Roboto";
-  background-color: var(--pink);
+  background-color: #dfe6e4;
   padding: 2em;
   text-align: justify;
   display: flex;
@@ -272,34 +276,12 @@ header .header__banner .title {
 }
 .container #courses .courses__slider {
   background-color: blue;
-  position: relative;
-}
-.container #courses .courses__slider:hover #previous, .container #courses .courses__slider:hover #next {
-  opacity: 1;
 }
 .container #courses .courses__slider__content {
   height: 100%;
   width: 100%;
   display: flex;
   overflow: hidden;
-}
-.container #courses .courses__slider__content #previous, .container #courses .courses__slider__content #next {
-  font-size: 65px;
-  position: absolute;
-  color: var(--pink);
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 0 5px;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.container #courses .courses__slider__content #previous {
-  left: 0;
-  top: 35vh;
-}
-.container #courses .courses__slider__content #next {
-  right: 0;
-  top: 35vh;
 }
 .container #courses .courses__slider__content__item {
   height: 100%;
@@ -311,6 +293,24 @@ header .header__banner .title {
 }
 .container #courses button {
   margin: 0 auto;
+}
+.container #prev, .container #next {
+  font-size: 65px;
+  position: absolute;
+  color: var(--pink);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.container #prev {
+  left: 6vw;
+  top: 49vh;
+}
+.container #next {
+  right: 6vw;
+  top: 49vh;
 }
 .container #testimony {
   background-color: #dfe6e4;
@@ -326,7 +326,28 @@ header .header__banner .title {
   margin: 2vh 0;
   height: 50%;
   width: 50%;
+  background-color: #dfe6e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container #testimony .testimonies-item {
+  border: var(--pink) solid 1px;
+  padding: 3em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 80%;
+  text-align: center;
   background-color: white;
+}
+.container #testimony .testimonies-item h6 {
+  font-size: 1.5em;
+}
+.container #testimony .testimonies-item p {
+  font-size: 1.2em;
 }
 .container #testimony button {
   color: #4A4A4A;
@@ -345,6 +366,10 @@ header .header__banner .title {
   width: 100%;
   justify-content: space-between;
 }
+.container #questions .question-plus i {
+  font-size: 25px;
+  cursor: pointer;
+}
 .container #questions .q_r {
   position: relative;
 }
@@ -359,6 +384,7 @@ header .header__banner .title {
 }
 .container #questions .questions__list {
   margin: 5em;
+  width: 100%;
 }
 .container #questions, .container .q_r {
   display: flex;
@@ -367,6 +393,40 @@ header .header__banner .title {
   width: 100%;
   padding-bottom: 3em;
   margin-bottom: 2em;
+}
+.container #response {
+  display: none;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.container #response.show {
+  display: inline-block;
+  animation: slide-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.container #response.hide {
+  display: inline-block;
+  animation: slide-out 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-out {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
 }
 
 footer {
