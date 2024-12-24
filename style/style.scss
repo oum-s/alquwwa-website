@@ -1,9 +1,11 @@
+// CSS GLOBAL
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 :root{
   --main-color: #b0c1bb;
   --font: #dfe6e4;
   --pink: #d9bfc2;
+  --grey: #4A4A4A;
 }
 
 *{
@@ -14,11 +16,10 @@
 
 html{
   font-family: 'Roboto', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
-  /* color: #696f6d; */
-  color: #4A4A4A;
+  color: var(--grey);
   font-size: 0.7rem;
 }
-// CSS GLOBAL
+// titres et p
 h1,h2,h3,h4,h5,h6{
   font-family: 'Almarai';
 }
@@ -42,6 +43,8 @@ h4, h6{
 .title__btn{
   display: flex;
 }
+
+// css commun
 button{
   cursor: pointer;
   padding: 2vh 3vw;
@@ -52,19 +55,21 @@ button{
   border: 1px solid white;
   font-weight: bold;
 }
-.btn__contact{
-  background-color: var(--main-color);
-  &:hover{
-    background-color: transparent;
-    border: solid 1px var(--main-color);
-    color: var(--main-color);
+.btn{
+  &__contact{
+    background-color: var(--main-color);
+    &:hover{
+      background-color: transparent;
+      border: solid 1px var(--main-color);
+      color: var(--main-color);
+    }
   }
-}
-.btn__other{
-  background-color: transparent;
-  &:hover{
-    background-color: white;
-    color: var(--main-color);
+  &__other{
+    background-color: transparent;
+    &:hover{
+      background-color: white;
+      color: var(--main-color);
+    }
   }
 }
 
@@ -120,6 +125,7 @@ header{
   #descr, #about, #testimony, #courses, #questions{
     padding: 7vh 4vw;
   }
+
   #descr{
     background-color: var(--font);
     height: 46vh;
@@ -149,18 +155,17 @@ header{
       
     
   }
-  /* .background{
-    background: url(./img/8.png);
+  
+  .background{
+  background-color: white;
+
+  &____upside{
+    background-color: var(--font);
+    }
   }
   .background__upside{
-    background: url(./img/7.png);
-  } */
-   .background{
-    background-color: white;
-   }
-   .background__upside{
-    background-color: #dfe6e4;
-   }
+    background-color: var(--font);
+  }
   .background__upside, .background{
     width: 100%;
     background-repeat: no-repeat;
@@ -178,13 +183,11 @@ header{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
     .about-img{
-      /* margin: 0 auto; */
       margin: auto;
       display: inline-block; position: relative; width: 400px; height: 400px; overflow: hidden; border-radius: 50%; 
       img{
-     /*  width: 100%;
-      height: 100%; */
       width: auto; height: 100%; margin-left: -50px; 
       object-fit: contain;
       border-radius: 50%;
@@ -193,26 +196,40 @@ header{
     
     .about__dtl{
       margin-bottom: 1vh;
+      width: 60%;
+      border-left: 2px solid var(--pink);
+      margin: 1em;
+      padding: 3em;
       h4{
         padding-bottom: 1em;
       }
     }
-    .about__dtl{
-      width: 60%;
-      /* height: fit-content; */
-      border-left: 2px solid var(--pink);
-      margin: 1em;
-      padding: 3em;
-      /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
-    }
-    
-    
+
   }
 
   .news{
-    height: 3vh;
+    height: 4vh;
+    width: 100%;
     background-color: #d9bfc2;
     color: black;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    p{
+      animation: rouler 15s linear infinite;
+      width: 100%;
+    }
+  }
+  @keyframes rouler {
+    0% {
+      margin-left: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      margin-left: -100%;
+      transform: translateX(100%);
+    }
   }
 
   #courses{
@@ -220,7 +237,6 @@ header{
     flex-direction: column;
     position: relative;
     .courses{
-      
       text-align: center;
       height: 80vh;
       width: 85vw;
@@ -228,7 +244,6 @@ header{
       align-items: center;
       flex-direction: row;
       justify-content: space-between;
-      
       margin: 0 auto;
       
       &:hover #prev, &:hover #next{
@@ -241,7 +256,7 @@ header{
     }
     &__dtl{
       font-family: 'Roboto';
-      background-color: #dfe6e4;
+      background-color: var(--font);
       padding: 2em;
       text-align: justify;
       display: flex;
@@ -301,13 +316,12 @@ header{
     }
     
     }
-    
-    
     button{
       margin: 0 auto;
     }
   }
   
+  // slider btn
   #prev , #next{
     font-size: 65px;
     position: absolute;
@@ -328,7 +342,7 @@ header{
   }
   
   #testimony{
-    background-color: #dfe6e4;
+    background-color: var(--font);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -341,7 +355,7 @@ header{
       margin: 2vh 0;
       height: 50%;
       width: 50%;
-      background-color: #dfe6e4;
+      background-color: var(--font);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -365,14 +379,13 @@ header{
       }
     }
     button{
-      color: #4A4A4A;
-      border: solid 1px #4A4A4A;
+      color: var(--grey);
+      border: solid 1px var(--grey);
     }
   }
 
   #questions{
-    /* height: 80vh; */
-
+    margin-bottom: 2em;
     .questions{
       margin: auto;
     }
@@ -398,7 +411,7 @@ header{
       bottom  : 0;
       height  : 1px;
       width   : 50%;  /* or 100px */
-      border-bottom: 1px solid #4A4A4A;
+      border-bottom: 1px solid var(--grey);
     }
     .questions__list{
       margin: 5em;
@@ -412,9 +425,6 @@ header{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    
-    padding-bottom: 3em;
-    margin-bottom: 2em;
   }
   #response {
     display: none;
@@ -457,22 +467,41 @@ header{
 
   
 }
+
+// footer
 footer{
-  width: 100%;
+  
+  #footer{
+    width: 100%;
   display: flex;
   height: 20vh;
   font-size: 1em;
   justify-content: space-around;
   margin: 2em;
+
+  
+  .main-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .socials{
+      i{
+        font-size: 1.3em;
+        margin-top: 1em ;
+        margin-right: 1em;
+      }
+    }
+  }
   ul{
     list-style-type: none;
-    padding: 2em 0;
+    padding-top: 2em;
   }
-  li{
-    margin-bottom: 1em;
+  li p{
+    margin-bottom: 1.5em;
   }
   .home{
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
   }
   .footer-menus{
@@ -485,4 +514,14 @@ footer{
   img{
     width: 7em;
   }
+  }
+
+  .reserved{
+    margin-bottom: 2em;
+    p{
+      text-align: center;
+      font-size: 1.3em;
+    }
+  }
+  
 }
