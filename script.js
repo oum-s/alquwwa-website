@@ -117,16 +117,19 @@ updateTestimonial();
 // au click sur le plus, afficher le paragraphe response et changer l'icone plus par l'icone moins 
 // récuperer les élements
 // let plus = document.querySelectorAll('fa-solid fa-circle-plus');
-
 document.getElementById('toggle-response').addEventListener('click', function() {
   const response = document.getElementById('response');
+  const qr = response.closest('.q_r');
+
   if (response) {
     if (response.classList.contains('show')) {
       response.classList.remove('show');
       response.classList.add('hide');
+      qr.style.height = '7em';
     } else {
       response.classList.remove('hide');
       response.classList.add('show');
+      qr.style.height = '17em';
     }
   }
   this.classList.toggle('fa-circle-plus');

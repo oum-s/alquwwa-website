@@ -57,6 +57,7 @@ button {
   outline: inherit;
   border: 1px solid white;
   font-weight: bold;
+  font-size: 1.3em;
 }
 
 .btn__contact {
@@ -75,12 +76,60 @@ button {
   color: var(--main-color);
 }
 
+.background {
+  background-color: white;
+}
+.background____upside {
+  background-color: var(--font);
+}
+
+.background__upside {
+  background-color: var(--font);
+}
+
+.background__upside, .background {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 10vh;
+}
+.background__upside img, .background img {
+  width: 100%;
+}
+
 header {
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   width: 100vw;
+}
+header .menu a {
+  position: relative;
+  padding: 4px 0;
+  margin: 0 16px;
+}
+header .menu a::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  transition: 0.5s transform ease;
+  transform: scale3d(0, 1, 1);
+  transform-origin: 0 50%;
+}
+header .menu a:hover::before {
+  transform: scale3d(1, 1, 1);
+}
+header .menu-1 a::before {
+  background: var(--font);
+  transform-origin: 100% 50%;
+}
+header .menu-1 a:hover::before {
+  transform-origin: 0 50%;
 }
 header nav {
   text-align: center;
@@ -95,6 +144,7 @@ header nav a {
   padding: 20px;
   text-decoration: none;
   font-family: "Almarai";
+  font-size: 1.5em;
 }
 header .header__banner {
   background: url(./img/dark_runner.jpg);
@@ -148,24 +198,6 @@ header .header__banner .title {
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
-}
-.container .background {
-  background-color: white;
-}
-.container .background____upside {
-  background-color: var(--font);
-}
-.container .background__upside {
-  background-color: var(--font);
-}
-.container .background__upside, .container .background {
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 10vh;
-}
-.container .background__upside img, .container .background img {
-  width: 100%;
 }
 .container #about {
   height: 100vh;
@@ -361,6 +393,86 @@ header .header__banner .title {
   color: var(--grey);
   border: solid 1px var(--grey);
 }
+.container #contact {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container #contact .contact {
+  background-color: var(--main-color);
+  height: 100%;
+  width: 60%;
+  position: relative;
+}
+.container #contact .contact form {
+  padding: 2em 2em 0em 27%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95%;
+}
+.container #contact .contact form h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+.container #contact .contact form input {
+  background-color: #a2b8b0;
+  padding: 0.5em;
+  border-radius: 0.5rem;
+  border-color: transparent;
+}
+.container #contact .contact form input :focus {
+  background-color: var(--main-color);
+  border-color: var(--font);
+}
+.container #contact .contact form textarea {
+  background-color: #a2b8b0;
+  text-align: justify;
+  height: 30%;
+  margin-bottom: 1em;
+  border-color: transparent;
+  border-radius: 0.5rem;
+}
+.container #contact .contact form .send {
+  display: block;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  background-color: var(--font);
+  color: var(--grey);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.container #contact .contact form .send:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+.container #contact .contact__infos {
+  background-color: var(--font);
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  transform: translate(-50%, -50%);
+  text-align: justify;
+  color: var(--grey);
+  width: 40%;
+  height: 50vh;
+  padding: 1.2em;
+}
+.container #contact .contact__infos h3 {
+  font-size: 2em;
+}
+.container #contact .contact__infos__details {
+  padding: 1em 0;
+}
+.container #contact .contact__infos__details__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .container #questions {
   margin-bottom: 2em;
 }
@@ -380,6 +492,8 @@ header .header__banner .title {
 }
 .container #questions .q_r {
   position: relative;
+  height: auto;
+  transition: height 0.5s;
 }
 .container #questions .q_r:after {
   content: "";
@@ -414,6 +528,9 @@ header .header__banner .title {
   display: inline-block;
   animation: slide-out 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
+.container #response.hide p {
+  display: none;
+}
 @keyframes slide-in {
   0% {
     transform: translateY(100%);
@@ -435,13 +552,19 @@ header .header__banner .title {
   }
 }
 
+footer {
+  background-color: var(--font);
+  height: 50vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
 footer #footer {
   width: 100%;
   display: flex;
-  height: 20vh;
+  height: 90%;
   font-size: 1em;
   justify-content: space-around;
-  margin: 2em;
+  padding: 2em;
 }
 footer #footer .main-footer {
   display: flex;
@@ -475,6 +598,7 @@ footer #footer img {
   width: 7em;
 }
 footer .reserved {
+  height: 10%;
   margin-bottom: 2em;
 }
 footer .reserved p {

@@ -17,13 +17,13 @@
    
 
     <div class="header__banner">
-      <nav>
-        <a href="#">Accueil</a>
-        <a href="#">A propos</a>
-        <a href="#"> Services</a>
+      <nav class="menu menu-1">
+        <a href="#title">Accueil</a>
+        <a href="#about">A propos</a>
+        <a href="#courses"> Services</a>
         <a href="#"> Contact</a>
       </nav>
-      <div class="title">
+      <div id="title">
         <h1>Lorem  et accusamus et iusto odio dignissimos ducimus qui blanditiis  iusto odio dignissimos ducimus qui blanditiis </h1>
 
         <h2>Lorem  et accusamus et iusto odio dignissimos ducimus qui blanditiis, lorem  et accusamus et iusto odio dignissimos ducimus qui blanditiis</h2>
@@ -182,14 +182,42 @@
         </div>
 
       </section>
+      <section id="contact">
+        <div class="contact">
+          <form action="" method="post">
+            <h1>Contact Form</h1>
+            <p>Please fill all entries.</p>
+            <!-- <label>Name :</label> -->
+            <input name="dname" placeholder="Your Name" type="text">
+            <!-- <label>Email :</label> -->
+            <input name="demail" placeholder="Your Email" type="text">
+            <!-- <label>Message :</label> -->
+            <textarea name="dmsg" placeholder="Message">
+            </textarea>
+            <input class="send" name="dsubmit" type="submit" value="Send">
+            </form>
+          <div class="contact__infos">
+            <h5>Contact us</h5>
+            <p>For any questions or inquiries, please contact us. We are here to help you.</p>
+            <div class="contact__infos__details">
+              <div class="contact__infos__details__item">
+                <p>alquwaa@gmail.com</p>
+                <i class="fa-solid fa-envelope"></i>
+                <p>
+          </div>
+        </div>
+      </section>
+      
 
     </div>
   </main>
-  
+  <div class="background__upside">
+    <img src="./style/img/7.png" alt="">
+  </div>
   <footer>
     <div id="footer">
       <div class="main-footer">
-        <img src="./style/img/logo.jpg" alt="logo">
+        <img src="./style/img/logo-removebg.png" alt="logo">
         <p>We are strategic & creative digital agency who are focused on user experience, mobile, social, data gathering and promotional offerings.</p>
         <div class="socials">
           <i class="fa-brands fa-instagram"></i>
