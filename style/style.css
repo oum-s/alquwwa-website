@@ -405,20 +405,37 @@ header .header__banner #title {
   border: solid 1px var(--grey);
 }
 .container #hiking {
-  margin: 5em 0;
-  height: 90vh;
+  margin: 7em 0;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container #hiking a {
+  margin: 0 auto;
+}
+.container #hiking .hiking {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  position: relative;
-  background-color: pink;
+  width: 100%;
+}
+.container #hiking .hiking__dtl__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 65vh;
 }
 .container #hiking .hiking__img, .container #hiking .hiking__dtl {
-  height: 100%;
+  min-height: 90vh;
   width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .container #hiking .hiking__img {
+  overflow: hidden;
   height: 100%;
   width: 45%;
   display: flex;
@@ -433,7 +450,7 @@ header .header__banner #title {
   justify-content: space-around;
 }
 .container #hiking .hiking__img .dots i {
-  color: var(--font);
+  color: var(--main-color);
 }
 .container #hiking .hiking__img img {
   width: 100%;
@@ -441,25 +458,51 @@ header .header__banner #title {
      object-fit: contain;
   margin-bottom: 2em;
 }
-.container #hiking .hiking__dtl {
-  background-color: black;
+.container #hiking .hiking__dtl__txt__one, .container #hiking .hiking__dtl__txt__two {
   display: flex;
   flex-direction: column;
 }
-.container #questions, .container .q_r {
+.container #hiking .hiking__dtl__txt__one__nordique, .container #hiking .hiking__dtl__txt__two__nordique {
+  font-size: 1.2em;
+}
+.container #hiking .hiking__dtl__txt__one__nordique__price, .container #hiking .hiking__dtl__txt__two__nordique__price {
+  padding: 0.2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--font);
+  font-size: 1.3em;
+  margin-top: 5px;
+}
+.container #hiking .hiking__dtl__txt__one__nordique__price span:last-of-type, .container #hiking .hiking__dtl__txt__two__nordique__price span:last-of-type {
+  font-size: 0.6em;
+  font-weight: normal;
+}
+.container #hiking .hiking__dtl__txt__one__nordique__price span:first-of-type, .container #hiking .hiking__dtl__txt__two__nordique__price span:first-of-type {
+  font-weight: bold;
+  font-size: 1em;
+}
+.container #hiking .hiking__dtl__txt__one__nordique__descr, .container #hiking .hiking__dtl__txt__two__nordique__descr {
+  border-left: 2px solid black;
+  margin-left: 2em;
+  margin-top: 2em;
+  padding-left: 1em;
+}
+
+#questions, .q_r {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
-.container #questions {
+
+#questions {
   margin-bottom: 2em;
 }
-.container #questions .questions__list {
+#questions .questions__list {
   margin: 5em;
   width: 100%;
 }
-.container #questions .questions__list .q_r {
+#questions .questions__list .q_r {
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -467,7 +510,7 @@ header .header__banner #title {
   width: 100%;
   position: relative;
 }
-.container #questions .questions__list .q_r:after {
+#questions .questions__list .q_r:after {
   content: "";
   position: absolute;
   left: 25%;
@@ -476,29 +519,32 @@ header .header__banner #title {
   width: 50%; /* or 100px */
   border-bottom: 1px solid var(--grey);
 }
-.container #questions .questions__list .q_r .question-plus {
+#questions .questions__list .q_r .question-plus {
   display: flex;
   flex-direction: row;
   padding: 3em 0;
   width: 100%;
   justify-content: space-between;
 }
-.container #questions .questions__list .q_r .question-plus .question {
+#questions .questions__list .q_r .question-plus .question {
   margin: auto;
 }
-.container #questions .questions__list .q_r .question-plus i {
+#questions .questions__list .q_r .question-plus i {
   font-size: 25px;
   cursor: pointer;
 }
-.container #response {
+
+#response {
   display: none;
   opacity: 0;
 }
-.container #response.show {
+
+#response.show {
   display: block;
   opacity: 1;
   animation: slide-bottom 0.5s forwards;
 }
+
 @keyframes slide-bottom {
   0% {
     transform: translateY(0);
@@ -519,41 +565,41 @@ header .header__banner #title {
     opacity: 0;
   }
 }
-.container #contact {
+#contact {
   margin: 10vh 0;
   height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container #contact .contact {
+#contact .contact {
   background-color: var(--main-color);
   height: 100%;
   width: 60%;
   position: relative;
 }
-.container #contact .contact form {
+#contact .contact form {
   padding: 2em 2em 0em 27%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 95%;
 }
-.container #contact .contact form h1 {
+#contact .contact form h1 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
-.container #contact .contact form input {
+#contact .contact form input {
   background-color: #a2b8b0;
   padding: 0.5em;
   border-radius: 0.5rem;
   border-color: transparent;
 }
-.container #contact .contact form input :focus {
+#contact .contact form input :focus {
   background-color: var(--main-color);
   border-color: var(--font);
 }
-.container #contact .contact form textarea {
+#contact .contact form textarea {
   background-color: #a2b8b0;
   text-align: justify;
   height: 30%;
@@ -561,7 +607,7 @@ header .header__banner #title {
   border-color: transparent;
   border-radius: 0.5rem;
 }
-.container #contact .contact form .send {
+#contact .contact form .send {
   display: block;
   margin: 0 auto;
   padding: 0.75rem 2rem;
@@ -573,11 +619,11 @@ header .header__banner #title {
   cursor: pointer;
   transition: 0.3s;
 }
-.container #contact .contact form .send:hover {
+#contact .contact form .send:hover {
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
   font-weight: bold;
 }
-.container #contact .contact__infos {
+#contact .contact__infos {
   background-color: var(--font);
   position: absolute;
   top: 50%;
@@ -589,13 +635,13 @@ header .header__banner #title {
   height: 50vh;
   padding: 1.2em;
 }
-.container #contact .contact__infos h3 {
+#contact .contact__infos h3 {
   font-size: 2em;
 }
-.container #contact .contact__infos__details {
+#contact .contact__infos__details {
   padding: 1em 0;
 }
-.container #contact .contact__infos__details__item {
+#contact .contact__infos__details__item {
   display: flex;
   align-items: center;
   justify-content: space-between;

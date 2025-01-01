@@ -426,20 +426,37 @@ header{
   }
 
   #hiking{
-    margin: 5em 0;
-    height: 90vh;
+    margin: 7em 0;
+    min-height: 90vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center ;
-    justify-content: space-around;
-    position: relative;
-    background-color: pink;
+    a{
+      margin: 0 auto;
+    }
     .hiking{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      
+      &__dtl__container{
+        display: flex
+        ;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 65vh;
+      }
       &__img , &__dtl{
-        height: 100%;
+        min-height: 90vh;
         width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
       &__img{
+        overflow: hidden;
         height: 100%;
         width: 45%;
         display: flex;
@@ -453,18 +470,43 @@ header{
           justify-content: space-around;
 
           i{
-            color: var(--font);
+            color: var(--main-color);
           }
         }
         img{width: 100%;
         object-fit: contain;
         margin-bottom: 2em;}
       }
-      &__dtl{
-        background-color: black;
-        display: flex;
-        flex-direction: column;
+        &__dtl__txt__one, &__dtl__txt__two{
+          display: flex;
+          flex-direction: column;
 
+          &__nordique{
+            font-size: 1.2em;
+            &__price{
+              padding: 0.2em;
+              width: fit-content;
+              background-color: var(--font);
+              font-size: 1.3em;
+              margin-top: 5px;
+              span:last-of-type {
+                font-size: 0.6em;
+                font-weight: normal;
+              }
+              span:first-of-type {
+                font-weight: bold;
+                font-size: 1em;
+              }
+              
+            }
+            &__descr{
+              border-left: 2px solid black;
+              margin-left: 2em;
+              margin-top: 2em;
+              padding-left: 1em;
+            }
+          }
+        }
       }
     }
   }
@@ -645,7 +687,7 @@ header{
     }
   }
   
-}
+
 
 // footer
 footer{
