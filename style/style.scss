@@ -19,6 +19,10 @@ html{
   color: var(--grey);
   font-size: 0.7rem;
 }
+
+a{
+  text-decoration: none;
+}
 // titres et p
 h1,h2,h3,h4,h5,h6{
   font-family: 'Almarai';
@@ -156,7 +160,7 @@ header{
     flex-direction: column;
     color: white;
    
-    .title{
+    #title{
       width: 60%;
       text-align: center;
       margin-bottom: 5vh;
@@ -169,14 +173,13 @@ header{
 // MAIN
 .container{
   width: 100vw;
-  height: fit-content;
-  #descr, #about, #testimony, #courses, #questions{
+  #descr, #about, #testimony, #courses, #questions, #hiking{
     padding: 7vh 4vw;
   }
 
   #descr{
     background-color: var(--font);
-    height: 46vh;
+    max-height: 76vh;
     display: flex;
     flex-direction: column;
     padding-bottom: 0;
@@ -204,16 +207,15 @@ header{
     
   }
   
-
-  
-  
   #about{
-    height: 100vh;
+    
+    margin: 5em 0;
+    height: 90vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
+    overflow: hidden;
     .about-img{
       margin: auto;
       display: inline-block; position: relative; width: 400px; height: 400px; overflow: hidden; border-radius: 50%; 
@@ -232,6 +234,9 @@ header{
       padding: 3em;
       h4{
         padding-bottom: 1em;
+      }
+      p{
+        font-size: 1.2em;
       }
     }
 
@@ -263,6 +268,8 @@ header{
   }
 
   #courses{
+    margin: 5em 0;
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -300,6 +307,9 @@ header{
         padding: 5px;
         font-size: 2em;
       }
+      p{
+        font-size: 1em;
+      }
       // changer à 1115
       
       
@@ -319,7 +329,7 @@ header{
         margin: 0.2em 0;
       }
       p{
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
     }
     &__slider{
@@ -346,7 +356,7 @@ header{
     }
     
     }
-    button{
+    button,  a{
       margin: 0 auto;
       
     }
@@ -396,7 +406,7 @@ header{
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        height: fit-content;
+        height: auto;
         width: 80%;
         text-align: center;
         background-color: white;
@@ -415,8 +425,143 @@ header{
     }
   }
 
+  #hiking{
+    margin: 5em 0;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+    justify-content: space-around;
+    position: relative;
+    background-color: pink;
+    .hiking{
+      &__img , &__dtl{
+        height: 100%;
+        width: 45%;
+      }
+      &__img{
+        height: 100%;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .dots{
+          display: flex;
+          flex-direction: row;
+          min-width: 20%;
+          justify-content: space-around;
+
+          i{
+            color: var(--font);
+          }
+        }
+        img{width: 100%;
+        object-fit: contain;
+        margin-bottom: 2em;}
+      }
+      &__dtl{
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+
+      }
+    }
+  }
+
+  #questions, .q_r{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #questions{
+    margin-bottom: 2em;
+
+    .questions__list{
+      margin: 5em;
+      width: 100%;
+
+      .q_r{
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      position: relative; // Utilisez auto pour permettre à la hauteur de s'ajuster automatiquement
+    
+        &:after{
+          content : "";
+          position: absolute;
+          left    : 25%;
+          bottom  : 0;
+          height  : 1px;
+          width   : 50%;  /* or 100px */
+          border-bottom: 1px solid var(--grey);
+        }
+
+      .question-plus{
+        display: flex;
+        flex-direction: row;
+        padding: 3em 0;
+        width: 100%;
+        justify-content: space-between;
+  
+        .question{
+          margin: auto;
+        }
+
+        i{
+          font-size: 25px;
+          cursor: pointer;
+        }
+        
+      }
+
+      }
+    }
+  }
+
+  #response {
+    display: none;
+    opacity: 0;
+  }
+  #response.show {
+    display: block;
+    opacity: 1;
+    animation: slide-bottom 0.5s forwards;
+  }
+
+  @keyframes slide-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+              opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+              transform: translateY(100%);
+              opacity: 1;
+    }
+  }
+  
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+              opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(-100%);
+              transform: translateY(-100%);
+              opacity: 0;
+    }
+  }
+
   #contact{
-    height: 60vh;
+    margin: 10vh 0;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -499,93 +644,6 @@ header{
       }
     }
   }
-  #questions{
-    margin-bottom: 2em;
-    .questions{
-      margin: auto;
-    }
-    .question-plus{
-      display: flex;
-      flex-direction: row;
-      padding: 3em 0;
-      width: 100%;
-      justify-content: space-between;
-
-      i{
-        font-size: 25px;
-        cursor: pointer;
-      }
-    }
-    .q_r{
-      position: relative;
-      height: auto; // Utilisez auto pour permettre à la hauteur de s'ajuster automatiquement
-  transition: height 0.5s; 
-    }
-    .q_r:after{
-      content : "";
-      position: absolute;
-      left    : 25%;
-      bottom  : 0;
-      height  : 1px;
-      width   : 50%;  /* or 100px */
-      border-bottom: 1px solid var(--grey);
-    }
-    .questions__list{
-      margin: 5em;
-      width: 100%;
-    }
-  }
-
-  
-  #questions, .q_r{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  #response {
-    display: none;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 0.5s, transform 0.5s;
-  }
-  #response.show {
-    display: inline-block;
-    animation: slide-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
-
-
-  }
-  
-  #response.hide {
-    p{
-      display: none;
-    }
-    display: inline-block;
-    animation: slide-out 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
-  }
-
-  @keyframes slide-in {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slide-out {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-  }
-
   
 }
 

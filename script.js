@@ -102,6 +102,7 @@ function updateTestimonial(){
   const testimonyAuthor = document.getElementById("testimony-author");
 
   if (testimonyText && testimonyAuthor) {
+    alert('hey');
     testimonyText.textContent = testimonials[currentIndexTestimonials].paragraph;
     testimonyAuthor.textContent = testimonials[currentIndexTestimonials].author;
   }
@@ -124,12 +125,10 @@ document.getElementById('toggle-response').addEventListener('click', function() 
   if (response) {
     if (response.classList.contains('show')) {
       response.classList.remove('show');
-      response.classList.add('hide');
-      qr.style.height = '7em';
+      qr.style.height = 'auto';
     } else {
-      response.classList.remove('hide');
       response.classList.add('show');
-      qr.style.height = '17em';
+      qr.style.height = 'auto';
     }
   }
   this.classList.toggle('fa-circle-plus');
