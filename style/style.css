@@ -222,7 +222,7 @@ header .header__banner #title {
 .container #about .about-img img {
   width: auto;
   height: 100%;
-  margin-left: -50px;
+  margin-left: 28px;
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 50%;
@@ -404,31 +404,102 @@ header .header__banner #title {
   color: var(--grey);
   border: solid 1px var(--grey);
 }
+.container #pricing {
+  margin: 7em 0;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+  background-color: var(--main-color);
+  padding: 2em;
+}
+.container #pricing .pricing__dtl {
+  font-size: 1.5em;
+  width: 18%;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 1em;
+}
+.container #pricing .pricing__dtl ul {
+  list-style-type: none;
+}
+.container #pricing .pricing__dtl i {
+  margin-right: 10px;
+  font-size: 0.8em;
+}
+.container #pricing .pricing {
+  min-height: 60vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 2em 0;
+}
+.container #pricing .pricing__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  line-height: 1.1;
+  padding: 30px;
+  /* width: 25%; */
+  max-width: 16vw;
+  border-radius: 15px;
+  background-color: white;
+  transition: transform 0.2s ease-in;
+}
+.container #pricing .pricing__item p, .container #pricing .pricing__item li {
+  font-size: 1.3em;
+}
+.container #pricing .pricing__item.second {
+  transform: scale(1.1);
+  background-color: var(--font);
+}
+.container #pricing .pricing__item:hover {
+  transform: scale(1.1);
+  background-color: var(--font);
+  cursor: pointer;
+  transition: transform ease-in 0.3s, background-color 0.3s ease-in;
+  z-index: 11111;
+}
+.container #pricing .pricing__item.first:hover ~ .second, .container #pricing .pricing__item.third:hover ~ .second {
+  transform: scale(1);
+  background-color: white;
+}
+.container #pricing .pricing__item.hovered {
+  transform: scale(1);
+  background-color: white;
+}
 .container #hiking {
   margin: 7em 0;
-  min-height: 90vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .container #hiking a {
   margin: 0 auto;
+  margin-bottom: 3em;
 }
 .container #hiking .hiking {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-around;
   width: 100%;
+  margin-top: 3em;
 }
 .container #hiking .hiking__dtl__container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 65vh;
+  min-height: 55vh;
 }
 .container #hiking .hiking__img, .container #hiking .hiking__dtl {
-  min-height: 90vh;
+  min-height: 60vh;
   width: 45%;
   display: flex;
   flex-direction: column;

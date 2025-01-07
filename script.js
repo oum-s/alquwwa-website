@@ -134,3 +134,17 @@ document.getElementById('toggle-response').addEventListener('click', function() 
   this.classList.toggle('fa-circle-plus');
   this.classList.toggle('fa-circle-minus');
 });
+
+document.querySelector('.pricing__item.third').addEventListener('mouseover', function() {
+  const previousItem = this.previousElementSibling;
+  if (previousItem) {
+    previousItem.classList.add('hovered');
+  }
+});
+
+document.querySelector('.pricing__item.third').addEventListener('mouseout', function() {
+  const previousItem = this.previousElementSibling;
+  if (previousItem) {
+    previousItem.classList.remove('hovered');
+  }
+});
