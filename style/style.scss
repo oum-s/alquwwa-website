@@ -61,6 +61,17 @@ button{
   font-size: 1.3em;
 }
 .btn{
+  /* display: inline-block;
+  padding: 10px 20px;
+  color: transparent;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; */
+  a{
+    color: white;
+  }
   &__contact{
     background-color: var(--main-color);
     &:hover{
@@ -73,7 +84,9 @@ button{
     background-color: transparent;
     &:hover{
       background-color: white;
-      color: var(--main-color);
+      a{
+        color: var(--main-color);;
+      }
     }
   }
 }
@@ -375,11 +388,11 @@ header{
   }
   #prev{
     left: 6vw;
-    top: 49vh;
+    top: 41vh;
   }
   #next{
     right: 6vw;
-    top: 49vh;
+    top: 41vh;
   }
   
   #testimony{
@@ -464,8 +477,7 @@ header{
         align-items: center;
         line-height: 1.1;
         padding: 30px;
-        /* width: 25%; */
-        max-width: 16vw;
+        max-width: 22%;
         border-radius: 15px;
         background-color: white;
         transition: transform 0.2s ease-in;
@@ -504,9 +516,11 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center ;
+    p{
+      font-size: 1em;
+    }
     a{
       margin: 0 auto;
-      margin-bottom: 3em;
     }
     .hiking{
       display: flex;
@@ -530,7 +544,9 @@ header{
       }
       &__img{
         overflow: hidden;
-        height: 100%;
+        object-fit: cover;
+        /* min-height: 60vh; */
+        height: 85vh;
         width: 45%;
         display: flex;
         flex-direction: column;
@@ -584,94 +600,47 @@ header{
     }
   }
 
-  #questions, .q_r{
+  #questions{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-  }
+    height: 70vh;
 
-  #questions{
-    margin-bottom: 2em;
-
-    .questions__list{
-      margin: 5em;
+    .accordion-item{
+      padding-bottom: 2em;
+      margin-bottom: 5px;
+      position: relative;
       width: 100%;
-
-      .q_r{
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      position: relative; // Utilisez auto pour permettre à la hauteur de s'ajuster automatiquement
-    
-        &:after{
-          content : "";
-          position: absolute;
-          left    : 25%;
-          bottom  : 0;
-          height  : 1px;
-          width   : 50%;  /* or 100px */
-          border-bottom: 1px solid var(--grey);
-        }
-
-      .question-plus{
+      border-bottom: 1px solid  var(--grey);
+      transition: height 0.6s ease; 
+      .accordion-header{
+        padding: 10px;
+        cursor: pointer;
+        font-weight: bold;
         display: flex;
         flex-direction: row;
         padding: 3em 0;
         width: 100%;
         justify-content: space-between;
-  
-        .question{
-          margin: auto;
-        }
-
         i{
           font-size: 25px;
           cursor: pointer;
         }
-        
+      }
+      .accordion-content{
+        display: none;
+        padding: 10px 0;
+        border-bottom-left-radius: 5px;
+      }
+      .accordion-content.active{
+        display: block;
+        max-height: 1000px;
       }
 
-      }
     }
-  }
+    
 
-  #response {
-    display: none;
-    opacity: 0;
-  }
-  #response.show {
-    display: block;
-    opacity: 1;
-    animation: slide-bottom 0.5s forwards;
-  }
-
-  @keyframes slide-bottom {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-              opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(100%);
-              transform: translateY(100%);
-              opacity: 1;
-    }
-  }
-  
-  @keyframes slide-top {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-              opacity: 1;
-    }
-    100% {
-      -webkit-transform: translateY(-100%);
-              transform: translateY(-100%);
-              opacity: 0;
-    }
   }
 
   #contact{
@@ -768,6 +737,9 @@ footer{
   height: 50vh;
   flex-direction: column;
   justify-content: space-between;
+  a{
+    color: var(--grey);
+  }
   #footer{
     width: 100%;
   display: flex;
@@ -784,7 +756,7 @@ footer{
 
     .socials{
       i{
-        font-size: 1.3em;
+        font-size: 1.9em;
         margin-top: 1em ;
         margin-right: 1em;
       }

@@ -64,6 +64,19 @@ button {
   font-size: 1.3em;
 }
 
+.btn {
+  /* display: inline-block;
+  padding: 10px 20px;
+  color: transparent;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; */
+}
+.btn a {
+  color: white;
+}
 .btn__contact {
   background-color: var(--main-color);
 }
@@ -77,6 +90,8 @@ button {
 }
 .btn__other:hover {
   background-color: white;
+}
+.btn__other:hover a {
   color: var(--main-color);
 }
 
@@ -358,11 +373,11 @@ header .header__banner #title {
 }
 .container #prev {
   left: 6vw;
-  top: 49vh;
+  top: 41vh;
 }
 .container #next {
   right: 6vw;
-  top: 49vh;
+  top: 41vh;
 }
 .container #testimony {
   background-color: var(--font);
@@ -445,8 +460,7 @@ header .header__banner #title {
   align-items: center;
   line-height: 1.1;
   padding: 30px;
-  /* width: 25%; */
-  max-width: 16vw;
+  max-width: 22%;
   border-radius: 15px;
   background-color: white;
   transition: transform 0.2s ease-in;
@@ -480,9 +494,11 @@ header .header__banner #title {
   flex-direction: column;
   align-items: center;
 }
+.container #hiking p {
+  font-size: 1em;
+}
 .container #hiking a {
   margin: 0 auto;
-  margin-bottom: 3em;
 }
 .container #hiking .hiking {
   display: flex;
@@ -507,7 +523,10 @@ header .header__banner #title {
 }
 .container #hiking .hiking__img {
   overflow: hidden;
-  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* min-height: 60vh; */
+  height: 85vh;
   width: 45%;
   display: flex;
   flex-direction: column;
@@ -559,83 +578,45 @@ header .header__banner #title {
   padding-left: 1em;
 }
 
-#questions, .q_r {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
 #questions {
-  margin-bottom: 2em;
-}
-#questions .questions__list {
-  margin: 5em;
-  width: 100%;
-}
-#questions .questions__list .q_r {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 70vh;
+}
+#questions .accordion-item {
+  padding-bottom: 2em;
+  margin-bottom: 5px;
   position: relative;
-}
-#questions .questions__list .q_r:after {
-  content: "";
-  position: absolute;
-  left: 25%;
-  bottom: 0;
-  height: 1px;
-  width: 50%; /* or 100px */
+  width: 100%;
   border-bottom: 1px solid var(--grey);
+  transition: height 0.6s ease;
 }
-#questions .questions__list .q_r .question-plus {
+#questions .accordion-item .accordion-header {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
   display: flex;
   flex-direction: row;
   padding: 3em 0;
   width: 100%;
   justify-content: space-between;
 }
-#questions .questions__list .q_r .question-plus .question {
-  margin: auto;
-}
-#questions .questions__list .q_r .question-plus i {
+#questions .accordion-item .accordion-header i {
   font-size: 25px;
   cursor: pointer;
 }
-
-#response {
+#questions .accordion-item .accordion-content {
   display: none;
-  opacity: 0;
+  padding: 10px 0;
+  border-bottom-left-radius: 5px;
 }
-
-#response.show {
+#questions .accordion-item .accordion-content.active {
   display: block;
-  opacity: 1;
-  animation: slide-bottom 0.5s forwards;
+  max-height: 1000px;
 }
 
-@keyframes slide-bottom {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(100%);
-    opacity: 1;
-  }
-}
-@keyframes slide-top {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
 #contact {
   margin: 10vh 0;
   height: 70vh;
@@ -724,6 +705,9 @@ footer {
   flex-direction: column;
   justify-content: space-between;
 }
+footer a {
+  color: var(--grey);
+}
 footer #footer {
   width: 100%;
   display: flex;
@@ -738,7 +722,7 @@ footer #footer .main-footer {
   justify-content: space-between;
 }
 footer #footer .main-footer .socials i {
-  font-size: 1.3em;
+  font-size: 1.9em;
   margin-top: 1em;
   margin-right: 1em;
 }

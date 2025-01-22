@@ -84,25 +84,29 @@ setInterval(() => updateSlider(currentIndex = (currentIndex + 1) % sliderData.le
 // slider testimonials
 let currentIndexTestimonials = 0;
 const testimonials = [
-    {author: "Fatou Diay",
-  paragraph: "First thing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!."},
-
-  {author: "Isleym Diar",
-  paragraph: `"First thing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!."`},
-  
-  {author: "Sylvie Pierrot",
-  paragraph: `"First thing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!."`},
-
-  {author: "Ophelie Yun",
-  paragraph: `"First thing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!."`},
-]
+  {
+    author: "Fatou Diay",
+    paragraph: "First thing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!."
+  },
+  {
+    author: "Isleym Diar",
+    paragraph: "First thing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!."
+  },
+  {
+    author: "Sylvie Pierrot",
+    paragraph: "First thing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!."
+  },
+  {
+    author: "Ophelie Yun",
+    paragraph: "First thing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!."
+  }
+];
 
 function updateTestimonial(){
   const testimonyText = document.getElementById("testimony-text");
   const testimonyAuthor = document.getElementById("testimony-author");
 
   if (testimonyText && testimonyAuthor) {
-    alert('hey');
     testimonyText.textContent = testimonials[currentIndexTestimonials].paragraph;
     testimonyAuthor.textContent = testimonials[currentIndexTestimonials].author;
   }
@@ -114,37 +118,37 @@ setInterval(() => {
 }, 4000);
 
 updateTestimonial();
+
 // questions-reponses
-// au click sur le plus, afficher le paragraphe response et changer l'icone plus par l'icone moins 
-// récuperer les élements
-// let plus = document.querySelectorAll('fa-solid fa-circle-plus');
-document.getElementById('toggle-response').addEventListener('click', function() {
-  const response = document.getElementById('response');
-  const qr = response.closest('.q_r');
+const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-  if (response) {
-    if (response.classList.contains('show')) {
-      response.classList.remove('show');
-      qr.style.height = 'auto';
+accordionHeaders.forEach(header => {
+  header.addEventListener('click', () => {
+    const accordionItem = header.parentElement;
+    const accordionContent = accordionItem.querySelector('.accordion-content');
+    const icon = header.querySelector('i');
+
+    // Toggle the active class
+    accordionContent.classList.toggle('active');
+
+    // Set max-height based on the active class
+    if (accordionContent.classList.contains('active')) {
+      const allContents = document.querySelectorAll('.accordion-content');
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+      // Change icon to minus
+      icon.classList.remove('fa-circle-plus');
+      icon.classList.add('fa-circle-minus');
+      allContents.forEach(content => {
+        if (content !== accordionContent) {
+          content.style.maxHeight = '0';
+          content.classList.remove('active');
+        }
+      });
     } else {
-      response.classList.add('show');
-      qr.style.height = 'auto';
+      accordionContent.style.maxHeight = '0';
+      // Change icon to plus
+      icon.classList.remove('fa-circle-minus');
+      icon.classList.add('fa-circle-plus');
     }
-  }
-  this.classList.toggle('fa-circle-plus');
-  this.classList.toggle('fa-circle-minus');
-});
-
-document.querySelector('.pricing__item.third').addEventListener('mouseover', function() {
-  const previousItem = this.previousElementSibling;
-  if (previousItem) {
-    previousItem.classList.add('hovered');
-  }
-});
-
-document.querySelector('.pricing__item.third').addEventListener('mouseout', function() {
-  const previousItem = this.previousElementSibling;
-  if (previousItem) {
-    previousItem.classList.remove('hovered');
-  }
+  });
 });
