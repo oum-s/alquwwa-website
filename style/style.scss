@@ -7,7 +7,6 @@
   --pink: #d9bfc2;
   --grey: #4A4A4A;
 }
-
 *{
   box-sizing: border-box;
   margin: 0;
@@ -321,7 +320,7 @@ header{
         font-size: 2em;
       }
       p{
-        font-size: 1em;
+        font-size: 1.3em;
       }
       // changer à 1115
       
@@ -341,8 +340,15 @@ header{
         padding: 5px;
         margin: 0.2em 0;
       }
+      &-why, &-who{
+        margin: 1em 0;
+      }
       p{
         font-size: 1rem;
+      }
+      #for, #why{
+        font-size: 1.5em;
+        font-weight: bold;
       }
     }
     &__slider{
@@ -404,7 +410,7 @@ header{
     height: 50vh;
     padding-bottom: 0;
     padding-top: 0 ;
-
+    transition: slide-left 0.3s ease-in;
     .testimonies{
       margin: 2vh 0;
       height: 50%;
@@ -478,6 +484,7 @@ header{
         line-height: 1.1;
         padding: 30px;
         max-width: 22%;
+        width: 16vw;
         border-radius: 15px;
         background-color: white;
         transition: transform 0.2s ease-in;
@@ -739,6 +746,9 @@ footer{
   justify-content: space-between;
   a{
     color: var(--grey);
+    &:hover{
+      color: white;
+    }
   }
   #footer{
     width: 100%;

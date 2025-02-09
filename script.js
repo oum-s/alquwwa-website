@@ -3,35 +3,57 @@
 const sliderData = [
   {
     image: "./style/img/boxe.jpg",
-    title: "BOXE",
-    paragraph: "firstthing ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!.",
+    title: "CARDIO BOXE",
+    paragraph: "La cardio-boxe est une activité qui combine des mouvements de boxe (coups-de-poing, coups de pied, esquives) avec des exercices travaillant le cardio. C'est un entraînement sans contact, accessible à tous, qui améliore à la fois la condition physique et la coordination.",
     benefits:[
-      "ONELorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "DEUXLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "trousLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "uatreLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque."
+      "• Pour les femmes qui veulent brûler des calories tout en s'amusant. Celles qui cherchent à sculpter leur silhouette et à tonifier leurs muscles.",
+      "• Pour déstresser et libérer leur énergie tout en se sentant plus fortes et confiantes. Pour les débutantes ou sportives expérimentées",
+      "• C'est une activité parfaite pour vous défouler, brûler un maximum de calories, et révéler la combattante qui sommeille en vous.",
+      "jj"
+    ]
+  },
+  {
+    image: "./style/img/boxe.jpg",
+    title: " HIIT",
+    paragraph: "Le HIIT (High-Intensity Interval Training) est idéal pour les femmes qui souhaitent optimiser leur temps et atteindre leurs objectifs rapidement, que ce soit.",
+    benefits:[
+      `Perte de poids : Brûlez des calories même après l'entraînement grâce à l'effet 'post-combustion`,
+      "• • Renforcement musculaire : Gagnez en tonus sans passer des heures à la salle.",
+      "• Gain d'énergie: Libérez le stress et boostez votre vitalité en peu de temps.",
+      "• Flexibilité du planning : Parfait pour les femmes actives ou avec un emploi du temps chargé, les séances sont courtes (20 à 30 minutes suffisent). Le HIIT, c'est votre allié pour transformer votre corps et renforcer votre mental, sans compromis sur votre emploi du temps. Peu importe votre niveau, vous pouvez progresser et vous sentir plus forte, une séance à la fois. Avec Al Quwa, libérez votre force en action et montrez que vous êtes capable de tout!"
     ]
   },
   {
     image: "./style/img/pilate.jpg",
-    title: "PILATE",
-    paragraph: "second ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!.",
+    title: "Fitness",
+    paragraph: "Le fitness regroupe des activités physiques variées (renforcement musculaire, cardio, souplesse) visant à améliorer la condition physique, la santé et le bien-être général.",
     benefits:[
-      "ONELorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "DEUXLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "trousLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "uatreLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque."
+      "• Pour les femmes qui veulent prendre soin de leur corps et de leur esprit.",
+      "• Celles qui cherchent à tonifier leurs muscles, perdre du poids ou simplement rester actives.",
+      "• Adapté à tous les niveaux : que vous soyez débutante ou habituée au sport, les exercices peuvent être personnalisés.",
+      "Le fitness, c'est bien plus qu'un sport : c'est un style de vie pour se sentir forte, confiante et pleine d'énergie."
     ]
   },
   {
     image: "./style/img/hiit.jpg",
-    title: "HIIT",
-    paragraph: "thirdLorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto modi nulla aliquid ab nobis aut sequi omnis dolor, molestiae cumque doloribus explicabo possimus, numquam minus. Doloremque provident reprehenderit numquam animi!.",
+    title: "Renforcement musculaire",
+    paragraph: "Le renforcement musculaire consiste à travailler vos muscles avec des exercices ciblés pour les rendre plus forts, plus toniques et mieux sculptés. Il peut se pratiquer avec ou sans matériel (poids, élastiques, etc.)",
     benefits:[
-      "ONELorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "DEUXLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "trousLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque.",
-      "uatreLorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, porro? Eligendi voluptatibus sapiente veniam velit libero dolorem voluptate veritatis soluta? Minus aliquid, fugiat dignissimos commodi cupiditate omnis tempora similique atque."
+      "• Pour les femmes qui veulent tonifier leur corps, améliorer leur posture ou se sentir plus fortes au quotidien.",
+      "• Celles qui souhaitent prévenir les douleurs, renforcer leur dos, ou compléter un programme minceur.",
+      "• Adapté à toutes : débutantes ou sportives confirmées.",
+      "• Le renforcement musculaire, c'est l'assurance de sculpter votre corps tout en gagnant en confiance et en énergie."
+    ]
+  },
+  {
+    image: "./style/img/hiit.jpg",
+    title: " Cross Fit",
+    paragraph: "Le CrossFit est une méthode d'entraînement qui mélange des exercices de musculation, de cardio et de gymnastique, réalisés à haute intensité. Les séances, variées et dynamiques, visent à développer la force, l'endurance, la souplesse et l'explosivité.",
+    benefits:[
+      "• Pour les femmes qui aiment se dépasser et relever des défis",
+      "•  Celles qui veulent sculpter leur corps, améliorer leur endurance et gagner en force.",
+      "• Adapté à tous les niveaux : les exercices peuvent être ajustés pour les débutantes comme pour les plus expérimentées.",
+      "• Le CrossFit, c'est bien plus qu'un sport : c'est un défi à relever à chaque séance."
     ]
   }
 ];
